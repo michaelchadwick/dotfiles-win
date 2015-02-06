@@ -2,9 +2,9 @@
 
 Despite Windows not having true "."-files, there is a way to enhance your command line with some extra sugar.
 
-Enter `DOSKEY`.
+Enter [DOSKEY](http://ss64.com/nt/doskey.html).
 
-Just make a shortcut to `cmd.exe` with an argument that pulls in a `.cmd` file with a bunch of `DOSKEY` commands:
+Just make a shortcut to `cmd.exe` with an argument that pulls in a `.cmd` (can't be a batch file) file with a bunch of `DOSKEY` commands:
 
 Ex. `C:\Windows\System32\cmd.exe /K C:\mystuff\doskeys.cmd`
 

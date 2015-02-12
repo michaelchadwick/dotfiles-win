@@ -26,6 +26,7 @@ DOSKEY webnew=xcopy /E /I %CODE%\web\_lib\initializr-responsive .\$1 $T cd /d .\
 
 REM Config file editing
 DOSKEY nanoaliases=%TXTAPP% "%DOTFWIN%\doskeys.cmd"
+DOSKEY nanoaliasesp=%TXTAPP% "%DOTFWIN%\doskeys-priv.cmd"
 DOSKEY nanogemrc=%TXTAPP% "c:\ProgramData\gemrc"
 DOSKEY nanogitconfig=%TXTAPP% %HOME%\.gitconfig
 DOSKEY nanogitignore=%TXTAPP% %DOTFWIN%\.gitignore-global
@@ -61,6 +62,7 @@ DOSKEY clear=cls
 DOSKEY clr=cls
 DOSKEY cp=copy $1 $2
 DOSKEY edit=%TXTAPP% $*
+DOSKEY gitlog=git lg
 DOSKEY ls=dir /x $*
 DOSKEY lsla=dir /x /a $*
 DOSKEY ls-la=dir /x /a $*

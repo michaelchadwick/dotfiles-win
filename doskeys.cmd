@@ -1,8 +1,9 @@
 @echo off
 REM The Main Paths
+set cliaudioapp=sounder
 set pathx=%PATH%
 set home=C:\Users\%USERNAME%
-set dbhome=F:\Dropbox
+set dbhome=%DROPBOX_HOME%
 set apps=F:\Apps
 set code=%DBHOME%\Code
 set sites=F:\Sites
@@ -12,6 +13,10 @@ set txtapp=notepad++
 
 REM Set private vars from external file
 for /f "delims=" %%x in (%DOTFWIN%\doskeys-priv.cmd) do (%%x)
+
+REM Audio Stuff
+DOSKEY play=%CLIAUDIOAPP% $1
+DOSKEY stop=%CLIAUDIOAPP% /stop
 
 REM Command shortcuts
 DOSKEY chromeclean="OldChromeRemover-0.5.exe"
@@ -27,6 +32,7 @@ DOSKEY webnew=xcopy /E /I %CODE%\web\_lib\initializr-responsive .\$1 $T cd /d .\
 REM Config file editing
 DOSKEY nanoaliases=%TXTAPP% "%DOTFWIN%\doskeys.cmd"
 DOSKEY nanoaliasesp=%TXTAPP% "%DOTFWIN%\doskeys-priv.cmd"
+DOSKEY nanobundle=%TXTAPP% "%HOME%\.bundle\config"
 DOSKEY nanogemrc=%TXTAPP% "c:\ProgramData\gemrc"
 DOSKEY nanogitconfig=%TXTAPP% %HOME%\.gitconfig
 DOSKEY nanogitignore=%TXTAPP% %DOTFWIN%\.gitignore-global
@@ -56,6 +62,9 @@ DOSKEY httphp=php -S localhost:4567
 DOSKEY httpy=python -m http.server 4568
 DOSKEY httrack=bundle exec rackup -p 4569
 DOSKEY httruby=ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 4570, :DocumentRoot => '.'); trap('INT') { s.shutdown }; s.start"
+
+REM Ruby/Bundle
+DOSKEY be=bundle exec $1
 
 REM UNIX-y commands
 DOSKEY clear=cls

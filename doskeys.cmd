@@ -1,13 +1,12 @@
 @echo off
 REM The Main Paths
-set apps=F:\Apps
-set cliaudioapp=%APPS%\sounder
+set cliaudioapp=sounder
 set home=C:\Users\%USERNAME%
 set dbhome=%DROPBOX_HOME%
 set code=%DBHOME%\Code
 set splocal="C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions"
 set dotfwin=%CODE%\dotfiles-win
-set txtapp=%APPS%\nano\nano.exe
+set txtapp=nano.exe
 
 REM Set private vars from external file
 for /f "delims=" %%x in (%DOTFWIN%\doskeys-priv.cmd) do (%%x)
@@ -26,10 +25,11 @@ REM Command shortcuts
 DOSKEY ..=cd ..
 DOSKEY ...=cd ..\..
 DOSKEY ....=cd ..\..\..
+DOSKEY atom="C:\Program Files (x86)\Microsoft VS Code\code.exe" $1
 DOSKEY bl=blink $*
 DOSKEY clist=choco list -localonly
 DOSKEY dandeploy=dandelion deploy
-DOSKEY editenv=%APPS%\eveditor\eveditor.exe
+DOSKEY editenv=eveditor.exe
 DOSKEY myip=curl -s ip.appspot.com ^| findstr /r "[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*"
 DOSKEY npp=notepad++ $*
 DOSKEY nxv=psexec \\$1 -u "ad\michael.chadwick" cmd /c ""c:\program files (x86)\nxlog\nxlog.exe" "-h""

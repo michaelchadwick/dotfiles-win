@@ -25,17 +25,16 @@ REM Command shortcuts
 DOSKEY ..=cd ..
 DOSKEY ...=cd ..\..
 DOSKEY ....=cd ..\..\..
-DOSKEY atom="C:\Program Files (x86)\Microsoft VS Code\code.exe" $1
 DOSKEY bl=blink $*
 DOSKEY clist=choco list -localonly
 DOSKEY dandeploy=dandelion deploy
 DOSKEY editenv=eveditor.exe
 DOSKEY myip=curl -s ip.appspot.com ^| findstr /r "[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*"
 DOSKEY npp=notepad++ $*
-DOSKEY nxv=psexec \\$1 -u "ad\michael.chadwick" cmd /c ""c:\program files (x86)\nxlog\nxlog.exe" "-h""
 DOSKEY phpa=php C:\php\phpa-norl\phpa-norl
 DOSKEY sites=cd /d %CODE%\web
 DOSKEY sqlite=sqlite3
+DOSKEY vscode="C:\Program Files (x86)\Microsoft VS Code\code.exe" $1
 DOSKEY webnew=xcopy /E /I %CODE%\web\_lib\initializr-responsive .\$1 $T cd /d .\$1
 
 REM Config file editing
@@ -54,7 +53,6 @@ DOSKEY db=cd /d %DBHOME%
 DOSKEY dl=cd /d %HOME%\Downloads
 DOSKEY dotfwin=cd /d %DOTFWIN%
 DOSKEY home=cd /d %HOME%
-DOSKEY infoserv=cd /d K:\InfoServ
 
 REM Sharepoint commands/shortcuts
 DOSKEY sp12=cd /d %SPLOCAL%\12\ISAPI

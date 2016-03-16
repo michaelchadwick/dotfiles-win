@@ -51,6 +51,7 @@ DOSKEY sp14=cd /d %SPLOCAL%\14\ISAPI
 DOSKEY sp15=cd /d %SPLOCAL%\15\ISAPI
 DOSKEY spadd=stsadm -o addsolution -filename $1
 DOSKEY spdeploy=stsadm -o deploysolution -name $1 -url $2 -immediate -allowgac
+DOSKEY spexec=stsadm -o execadmsvcjobs
 DOSKEY spupgrade=stsadm -o upgradesolution -name $1 -filename $1 -immediate -allowgac
 DOSKEY spretract=stsadm -o retractsolution -name $1 -url $2 -immediate
 DOSKEY spdelete=stsadm -o deletesolution -name $1

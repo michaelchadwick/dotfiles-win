@@ -4,28 +4,20 @@ set cliaudioapp=sounder
 set home=C:\Users\%USERNAME%
 set dbhome=%DROPBOX_HOME%
 set code=%DBHOME%\Code
-set splocal="C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions"
 set dotfwin=%CODE%\dotfiles-win
 set txtapp=nano.exe
 
 REM Set private vars from external file
 for /f "delims=" %%x in (%DOTFWIN%\doskeys-priv.cmd) do (%%x)
 
-REM Audio Stuff
+REM Audio stuff
 DOSKEY play=%CLIAUDIOAPP% $1
 DOSKEY stop=%CLIAUDIOAPP% /stop
-
-REM Code Directories
-DOSKEY gocode=cd /d %CODE%\go
-DOSKEY rubycode=cd /d %CODE%\ruby
-DOSKEY rustcode=cd /d %CODE%\rust
-DOSKEY webcode=cd /d %CODE%\web
 
 REM Command shortcuts
 DOSKEY ..=cd ..
 DOSKEY ...=cd ..\..
 DOSKEY ....=cd ..\..\..
-DOSKEY bl=blink $*
 DOSKEY clist=choco list -localonly
 DOSKEY dandeploy=dandelion deploy
 DOSKEY editenv=eveditor.exe
@@ -34,7 +26,6 @@ DOSKEY npp=notepad++ $*
 DOSKEY phpa=php C:\php\phpa-norl\phpa-norl
 DOSKEY sites=cd /d %CODE%\web
 DOSKEY sqlite=sqlite3
-DOSKEY vscode="C:\Program Files (x86)\Microsoft VS Code\code.exe" $1
 DOSKEY webnew=xcopy /E /I %CODE%\web\_lib\initializr-responsive .\$1 $T cd /d .\$1
 
 REM Config file editing
@@ -78,6 +69,7 @@ DOSKEY clear=cls
 DOSKEY clr=cls
 DOSKEY cp=copy $1 $2
 DOSKEY edit=%TXTAPP% $*
+DOSKEY gitlg=git lg -20
 DOSKEY gitlog=git lg -20
 DOSKEY ls=dir /x $*
 DOSKEY lsla=dir /x /a $*
@@ -87,4 +79,4 @@ DOSKEY nano=%TXTAPP% $*
 DOSKEY pwd=cd
 DOSKEY rm=del $*
 DOSKEY rmd=rd /s $*
-DOSKEY rms=%RMD%
+DOSKEY rms=rd /s $*

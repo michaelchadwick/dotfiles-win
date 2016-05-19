@@ -18,15 +18,26 @@ REM Command shortcuts
 DOSKEY ..=cd ..
 DOSKEY ...=cd ..\..
 DOSKEY ....=cd ..\..\..
-DOSKEY clist=choco list -localonly
 DOSKEY dandeploy=dandelion deploy
 DOSKEY editenv=eveditor.exe
+DOSKEY jsc=node
 DOSKEY myip=curl -s ip.appspot.com ^| findstr /r "[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*"
 DOSKEY npp=notepad++ $*
-DOSKEY phpa=php C:\php\phpa-norl\phpa-norl
 DOSKEY sites=cd /d %CODE%\web
 DOSKEY sqlite=sqlite3
+DOSKEY vscode="C:\Program Files (x86)\Microsoft VS Code\Code.exe" $1
 DOSKEY webnew=xcopy /E /I %CODE%\web\_lib\initializr-responsive .\$1 $T cd /d .\$1
+
+REM Language REPLs
+REM Ruby=irb
+DOSKEY jsc=node
+DOSKEY phpa=php C:\php\phpa-norl\phpa-norl
+
+REM Language-specific web servers
+DOSKEY httphp=php -S localhost:4567
+DOSKEY httpy=python -m http.server 4568
+DOSKEY httrack=bundle exec rackup -p 4569
+DOSKEY httruby=ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 4570, :DocumentRoot => '.'); trap('INT') { s.shutdown }; s.start"
 
 REM Config file editing
 DOSKEY nanoaliases=%TXTAPP% "%DOTFWIN%\doskeys.cmd"
@@ -56,11 +67,6 @@ DOSKEY spupgrade=stsadm -o upgradesolution -name $1 -filename $1 -immediate -all
 DOSKEY spretract=stsadm -o retractsolution -name $1 -url $2 -immediate
 DOSKEY spdelete=stsadm -o deletesolution -name $1
 
-REM Simple web servers
-DOSKEY httphp=php -S localhost:4567
-DOSKEY httpy=python -m http.server 4568
-DOSKEY httrack=bundle exec rackup -p 4569
-DOSKEY httruby=ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 4570, :DocumentRoot => '.'); trap('INT') { s.shutdown }; s.start"
 
 REM Ruby/Bundle
 DOSKEY be=bundle exec -- $*
